@@ -58,8 +58,9 @@ public class FrameLock : MonoBehaviour
     {
         if (_enteredCode.Length == _lockCode.Length)
         {
-            for(int i = 0;  i < _enteredCode.Length; i++)
+            for (int i = 0; i < _enteredCode.Length; i++)
             {
+                Debug.Log("Code Entered");
                 if (_enteredCode[i] != _lockCode[i])
                     return false;
             }
