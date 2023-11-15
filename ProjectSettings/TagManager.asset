@@ -8,6 +8,7 @@ TagManager:
   - Projectile
   - Water
   - Destroyer
+  - Exit
   layers:
   - Default
   - TransparentFX

@@ -10,6 +10,8 @@ public class Timer : MonoBehaviour
     private float _currentTime;
     [SerializeField] private TMP_Text _text;
 
+    [SerializeField] private TMP_Text _youEscapedTime;
+
     void Start()
     {
         _currentTime = 0;
@@ -21,9 +23,7 @@ public class Timer : MonoBehaviour
         {
             _currentTime = _currentTime + Time.deltaTime;
         }
-
-        TimeSpan time = TimeSpan.FromSeconds(_currentTime);
-        _text.text = time.Minutes.ToString() + " : " + time.Seconds.ToString() + " : " + time.Milliseconds.ToString();
+        CurrentTime();
     }
 
     public void StartTimer()
@@ -33,5 +33,12 @@ public class Timer : MonoBehaviour
     public void StopTimer()
     {
         _timerActive = false;
+    }
+
+    private void CurrentTime()
+    {
+        TimeSpan time = TimeSpan.FromSeconds(_currentTime);
+        _text.text = time.Minutes.ToString() + " : " + time.Seconds.ToString() + " : " + time.Milliseconds.ToString();
+        _youEscapedTime.text = time.Minutes.ToString() + " : " + time.Seconds.ToString() + " : " + time.Milliseconds.ToString();
     }
 }
